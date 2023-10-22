@@ -113,6 +113,8 @@ from common.djangoapps.student.models import CourseEnrollment
 
 <div class="dashboard-notifications" tabindex="-1">
 
+  Bienvenido a Naat
+
     %if banner_account_activation_message:
         <div class="dashboard-banner">
             ${banner_account_activation_message | n, decode.utf8}
@@ -237,17 +239,17 @@ from common.djangoapps.student.models import CourseEnrollment
           % else:
             <div class="empty-dashboard-message">
               % if display_dashboard_courses:
-                <p>${_("You are not enrolled in any courses yet.")}</p>
+                <p>${_("Aún no tienes cursos asignados")}</p>
                 % if empty_dashboard_message:
                   <p class="custom-message">${empty_dashboard_message | n, decode.utf8}</p>
                 %endif
                 % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
                   <a class="btn btn-primary" href="${marketing_link('COURSES')}">
-                    ${_("Explore courses")}
+                    ${_("Explora nuestros cursos")}
                   </a>
                 %endif
               % else:
-              <p>${_("Activate your account!")}</p>
+              <p>${_("Activa tu cuenta!")}</p>
               <p class="custom-message">${ activate_account_message | n, decode.utf8 }</p>
               % endif
           </div>
@@ -281,7 +283,7 @@ from common.djangoapps.student.models import CourseEnrollment
         % if settings.FEATURES.get('ENABLE_DASHBOARD_SEARCH'):
           <div id="dashboard-search-bar" class="search-bar dashboard-search-bar" role="search" aria-label="Dashboard">
             <form class="search-form">
-              <label for="dashboard-search-input">${_('Search Your Courses')}</label>
+              <label for="dashboard-search-input">${_('Busca tus cursos')}</label>
               <div class="search-field-wrapper">
                 <input id="dashboard-search-input" type="text" class="search-field"/>
                 <button type="submit" class="search-button" title="${_('Search')}">
